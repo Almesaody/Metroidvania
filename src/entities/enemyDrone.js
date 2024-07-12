@@ -95,17 +95,6 @@ export function makeDrone(k, initialPos) {
                     });
                 });
 
-                // this.onCollide("collider", () => {
-                //     switch (this.state) {
-                //         case "partol-left":
-                //             this.state = "partol-right";
-                //             break;
-                //         case "partol-right":
-                //             this.state = "patrol-left";
-                //             break;
-                //     }
-                // });
-
                 this.on("exploded", () => {
                     k.destroy(this);
                 });
