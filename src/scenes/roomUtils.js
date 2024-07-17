@@ -1,4 +1,4 @@
-import { state } from "../state/globalStateManager";
+import { state, statePropsEnum } from "../state/globalStateManager";
 
 export function setBackgoundColor(k, hexColorCode) {
     k.add([
@@ -62,7 +62,7 @@ export function setMapColliders(k, map, colliders) {
                 if (currentState.playerInBossFight || currentState.isBossDefeated)
                     return;
 
-                state.set("playerInBossFight", true);
+                state.set(statePropsEnum.playerInBossFight, true);
 
                 k.tween(
                     bossBarrier.opacity,

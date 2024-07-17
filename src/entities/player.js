@@ -1,4 +1,4 @@
-import { state } from "../state/globalStateManager.js";
+import { state, statePropsEnum } from "../state/globalStateManager.js";
 import { maxPlayerHP } from "../state/constants.js";
 import { healthBar } from "../ui/healthBar.js";
 import { makeBlink } from "./entitySharedLogic.js";
@@ -126,12 +126,12 @@ export function makePlayer(k) {
                 this.on("hurt", () => {
                     makeBlink(k, this);
                     if (this.hp() > 0) {
-                        state.set("playerHp", this.hp());
+                        state.set(statePropsEnum.playerHp, this.hp());
                         healthBar.trigger("update");
                         return;
                     }
 
-                    state.set("playerHp", maxPlayerHP);
+                    state.set(statePropsEnum.playerHp, maxPlayerHP);
                     this.play("explode");
                 });
 
