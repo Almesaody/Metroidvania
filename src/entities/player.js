@@ -148,6 +148,7 @@ export function makePlayer(k) {
                     }
 
                     state.set(statePropsEnum.playerHp, state.current().maxPlayerHP);
+                    k.play("boom");
                     this.play("explode");
                 });
 
